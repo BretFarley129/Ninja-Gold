@@ -46,7 +46,11 @@
     <p>Activities</p>
     <div>
             {%for i in log:%}
-               <p>{{i}}</p>
+                {%if i[0] == "-":%}
+                    <p><font color="red">{{i}}</p>
+                {%else%}
+                    <p><font color="green">{{i}}</p>
+                {%endif%}
             {%endfor%}
     </div>
     <div>

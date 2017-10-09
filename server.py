@@ -5,6 +5,10 @@ app.secret_key = 'aKey'
 
 @app.route('/')
 def index():
+    if "gold" not in session:
+        session["gold"] = 0
+    if "log" not in session:
+        session["log"] = []
 
     return render_template("index.html", gold = session['gold'], log = session['log'])
 
@@ -31,7 +35,6 @@ def result():
         session['gold'] = 0
         session['log'] = []
 
-    print session['gold']    
     return redirect('/')
 
     
