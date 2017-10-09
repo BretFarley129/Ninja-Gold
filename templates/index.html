@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold GAME</title>
+</head>
+<body>
+    <div>
+        Your gold: {{gold}}
+    </div>
+    <div>
+        <h1>Farm</h1>
+        <p>(earns 10-20 gold)</p>
+        <form action="/process" method ='post'>
+            <input type="hidden" name="action" value="farm">
+            <input type="submit" name="Farm" value= "Find gold!">
+        </form>
+    </div>
+    <div>
+        <h1>Cave</h1>
+        <p>(earns 5-10 gold)</p>
+        <form action="/process" method ='post'>
+            <input type="hidden" name="action" value="cave">
+            <input type="submit" name="Cave" value= "Find gold!">
+        </form>
+    </div>
+    <div>
+        <h1>House</h1>
+        <p>(earns 2-5 gold)</p>
+        <form action="/process" method ='post'>
+            <input type="hidden" name="action" value="house">
+            <input type="submit" name="House" value= "Find gold!">
+        </form>
+    </div>
+    <div>
+        <h1>Casino</h1>
+        <p>(earns or loses 50 gold)</p>
+        <form action="/process" method ='post'>
+            <input type="hidden" name="action" value="casino">
+            <input type="submit" name="Casino" value= "Find gold!">
+        </form>
+    </div>
+    
+    <p>Activities</p>
+    <div>
+            {%for i in log:%}
+               <p>{{i}}</p>
+            {%endfor%}
+    </div>
+    <div>
+        <form action="/process" method ='post'>
+            <input type="hidden" name="action" value="reset">
+            <input type="submit" name="reset" value= "NEW GAME">
+        </form>
+    </div>
+    
+    
+</body>
+</html>
